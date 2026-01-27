@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CentroDeportivoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Actividad">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="AforoMaximo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Reserva">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SocioId" Type="int" Nullable="false" />
+    <Property Name="ActividadId" Type="int" Nullable="false" />
+    <Property Name="Fecha" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Socio">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Reserva__Activid__29572725">
+    <End Role="Actividad" Type="Self.Actividad" Multiplicity="1" />
+    <End Role="Reserva" Type="Self.Reserva" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Actividad">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Reserva">
+        <PropertyRef Name="ActividadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Reserva__SocioId__286302EC">
+    <End Role="Socio" Type="Self.Socio" Multiplicity="1" />
+    <End Role="Reserva" Type="Self.Reserva" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Socio">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Reserva">
+        <PropertyRef Name="SocioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CentroDeportivoModelStoreContainer">
+    <EntitySet Name="Actividad" EntityType="Self.Actividad" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Reserva" EntityType="Self.Reserva" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Socio" EntityType="Self.Socio" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Reserva__Activid__29572725" Association="Self.FK__Reserva__Activid__29572725">
+      <End Role="Actividad" EntitySet="Actividad" />
+      <End Role="Reserva" EntitySet="Reserva" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Reserva__SocioId__286302EC" Association="Self.FK__Reserva__SocioId__286302EC">
+      <End Role="Socio" EntitySet="Socio" />
+      <End Role="Reserva" EntitySet="Reserva" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
