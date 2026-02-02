@@ -1,5 +1,7 @@
 ﻿using Centro_Deportivo;
 using Model;
+using Model.Repositorios;
+using ViewModel.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -11,17 +13,20 @@ namespace ViewModel
 {
     public class ReservasViewModel : INotifyPropertyChanged
     {
-        private CentroDeportivoEntities _db = new CentroDeportivoEntities();
+        private readonly ReservasService _reservaService = new ReservasService();
+        private readonly ReservaRepositorio _reservaRepo = new ReservaRepositorio();
+        private readonly SocioRepositorio _socioRepo = new SocioRepositorio();
+        private readonly ActividadRepositorio _actividadRepo = new ActividadRepositorio();
 
         // LISTA DE RESERVAS
         private List<Reserva> _reservas;
-        public List<Reserva> Reservas
+        public List<Reserva> InputReservas
         {
             get => _reservas;
             set
             {
                 _reservas = value;
-                OnPropertyChanged(nameof(Reservas));
+                OnPropertyChanged(nameof(InputReservas));
             }
         }
 
@@ -31,63 +36,61 @@ namespace ViewModel
 
         // RESERVA SELECCIONADA
         private Reserva _reservaSeleccionada;
-        public Reserva ReservaSeleccionada
+        public Reserva InputReservaSeleccionada
         {
             get => _reservaSeleccionada;
             set
             {
                 _reservaSeleccionada = value;
-                OnPropertyChanged(nameof(ReservaSeleccionada));
+                OnPropertyChanged(nameof(InputReservaSeleccionada));
 
                 if (value != null)
                 {
-                    SocioId = value.SocioId;
-                    ActividadId = value.ActividadId;
-                    Fecha = value.Fecha;
+                    InputSocioId = value.SocioId;
+                    InputActividadId = value.ActividadId;
+                    InputFecha = value.Fecha;
                 }
             }
         }
 
         // CAMPOS DEL FORMULARIO
-
         // SocioId
         private int _socioId;
-        public int SocioId
+        public int InputSocioId
         {
             get => _socioId;
             set
             {
                 _socioId = value;
-                OnPropertyChanged(nameof(SocioId));
+                OnPropertyChanged(nameof(InputSocioId));
             }
         }
 
         // ActividadId
         private int _actividadId;
-        public int ActividadId
+        public int InputActividadId
         {
             get => _actividadId;
             set
             {
                 _actividadId = value;
-                OnPropertyChanged(nameof(ActividadId));
+                OnPropertyChanged(nameof(InputActividadId));
             }
         }
 
         // Fecha
         private DateTime _fecha = DateTime.Now;
-        public DateTime Fecha
+        public DateTime InputFecha
         {
             get => _fecha;
             set
             {
                 _fecha = value;
-                OnPropertyChanged(nameof(Fecha));
+                OnPropertyChanged(nameof(InputFecha));
             }
         }
 
         // MENSAJES DE ERROR
-
         // Error Socio
         private string _errorSocio;
         public string ErrorSocio
@@ -159,24 +162,7 @@ namespace ViewModel
         // CONSTRUCTOR
         public ReservasViewModel()
         {
-
-            try
-            {
-                List<Reserva> listaReservas = _db.Reserva.ToList();
-
-                // Filtra por los socios activos.
-                var sociosActivos = _db.Socio.Where(socio => socio.Activo).ToList();
-                List<Socio> listaSocios = sociosActivos;
-
-                List<Actividad> listaActividades = _db.Actividad.ToList();
-
-                Reservas = listaReservas;
-                Socios = listaSocios;
-                Actividades = listaActividades;
-            }
-            catch (Exception ex) { 
-                ErrorAforo = $"Error al cargar los datos: {ex.Message}"; 
-            }
+            RefrescarDatos();
 
             CrearCommand = new RelayCommand(CrearReserva);
             ModificarCommand = new RelayCommand(ModificarReserva);
@@ -186,270 +172,146 @@ namespace ViewModel
             GenerarHistorialCommand = new RelayCommand(GenerarInformeHistorial);
         }
 
-        // VALIDACIONES
-        // Validar Socio
-        private bool ValidarSocio()
+        private void RefrescarDatos()
         {
-            if (SocioId <= 0)
+            try
             {
-                ErrorSocio = "Debes seleccionar un socio.";
-                return false;
+                InputReservas = _reservaRepo.Seleccionar();
+                Socios = _socioRepo.Seleccionar().Where(s => s.Activo).ToList();
+                Actividades = _actividadRepo.Seleccionar();
             }
-
-            var socio = _db.Socio.Find(SocioId);
-            if (socio == null)
-            {
-                ErrorSocio = "El socio seleccionado no existe.";
-                return false;
+            catch (Exception ex) { 
+                ErrorAforo = $"Error al cargar datos: {ex}"; 
             }
-
-            if (!socio.Activo)
-            {
-                ErrorSocio = "El socio no está activo.";
-                return false;
-            }
-
-            ErrorSocio = "";
-            return true;
         }
 
-        // Validar Actividad
-        private bool ValidarActividad()
-        {
-            if (ActividadId <= 0)
-            {
-                ErrorActividad = "Debes seleccionar una actividad.";
-                return false;
-            }
-
-            var actividad = _db.Actividad.Find(ActividadId);
-            if (actividad == null)
-            {
-                ErrorActividad = "La actividad seleccionada no existe.";
-                return false;
-            }
-
-            ErrorActividad = "";
-            return true;
-        }
-
-        // Validar Fecha
-        private bool ValidarFecha()
-        {
-            if (Fecha == default(DateTime))
-            {
-                ErrorFecha = "Debes seleccionar una fecha.";
-                return false;
-            }
-
-            if (Fecha < DateTime.Now)
-            {
-                ErrorFecha = "No puedes reservar en una fecha pasada.";
-                return false;
-            }
-
-            ErrorFecha = "";
-            return true;
-        }
-
-        // Validar Aforo
-        private bool ValidarAforo()
-        {
-            var actividad = _db.Actividad.Find(ActividadId);
-
-            if (actividad == null)
-            {
-                ErrorAforo = "La actividad seleccionada no existe.";
-                return false;
-            }
-
-            
-
-            DateTime fecha = Fecha.Date;
-            DateTime siguienteDia = fecha.AddDays(1);
-
-            // Saca la cantidad de personas que han reservado esa actividad
-            int idReserva = ReservaSeleccionada?.Id ?? 0;
-
-            var reservas = _db.Reserva.ToList();
-            int reservasActuales = reservas.Where(reserva =>
-                reserva.ActividadId == ActividadId &&
-                reserva.Id != idReserva &&
-                reserva.Fecha.Date == fecha)
-            .Count();
-
-
-
-            if (reservasActuales >= actividad.AforoMaximo)
-            {
-                ErrorAforo = "La actividad está completa.";
-                return false;
-            }
-
-            ErrorAforo = "";
-            return true;
-        }
-
-        // Validar Solapamiento
-        private bool ValidarSolapamiento(bool crear)
-        {
-            // Comrpueba si se esta creando o modificando
-            int idReserva = 0;
-            if (!crear)
-            {
-                idReserva = ReservaSeleccionada?.Id ?? 0;
-            }
-
-            // Comprueba si el socio ya ha reservado esa actividad ese día
-            var reservas = _db.Reserva.ToList();
-
-            bool solapa = reservas.Any(reserva =>
-                reserva.SocioId == SocioId &&
-                reserva.Id != idReserva &&
-                reserva.Fecha.Date >= Fecha.Date
-            );
-
-            if (solapa)
-            {
-                ErrorSolapamiento = "Ya tiene una reserva de esa actividad en ese día.";
-                return false;
-            }
-
-            ErrorSolapamiento = "";
-            return true;
-        }
-
-        // Validar Formulario
-        private bool ValidarFormulario(bool crear)
-        {
-            bool okSocio = ValidarSocio();
-            bool okActividad = ValidarActividad();
-            bool okFecha = ValidarFecha();
-            bool okAforo = ValidarAforo();
-            bool okSolapamiento = ValidarSolapamiento(crear);
-
-            return okSocio && okActividad && okFecha && okAforo && okSolapamiento;
-        }
-
-
-        // CREAR RESERVA
         private void CrearReserva()
         {
-            if (!ValidarFormulario(true))
+
+            try
+            {
+                LimpiarErrores();
+
+                var nueva = new Reserva { SocioId = InputSocioId, ActividadId = InputActividadId, Fecha = InputFecha };
+                var actividad = Actividades.FirstOrDefault(a => a.Id == InputActividadId);
+
+                _reservaService.CrearReserva(nueva, actividad);
+
+                RefrescarDatos();
+                LimpiarFormulario();
+            }
+            catch (Exception ex) {
+                Errores(ex);
+            }
+        }
+
+        private void ModificarReserva()
+        {
+            if (InputReservaSeleccionada == null)
             {
                 return;
             }
-            try
-            {
-                var nueva = new Reserva
-                {
-                    SocioId = SocioId,
-                    ActividadId = ActividadId,
-                    Fecha = Fecha
-                };
-
-                _db.Reserva.Add(nueva);
-                _db.SaveChanges();
-
-                Reservas = _db.Reserva.ToList();
-                LimpiarFormulario();
-            }
-            catch (Exception ex)
-            {
-                ErrorAforo = $"Error al guardar la reserva: {ex.Message}";
-            }
-        }
-
-        // MODIFICAR RESERVA
-        private void ModificarReserva()
-        {
-            if (ReservaSeleccionada == null) { 
-                return; 
-            }
-            
-            if (!ValidarFormulario(false)) { 
-                return; 
-            }
 
             try
             {
-                ReservaSeleccionada.SocioId = SocioId;
-                ReservaSeleccionada.ActividadId = ActividadId;
-                ReservaSeleccionada.Fecha = Fecha;
+                LimpiarErrores();
 
-                _db.SaveChanges();
+                InputReservaSeleccionada.SocioId = InputSocioId;
+                InputReservaSeleccionada.ActividadId = InputActividadId;
+                InputReservaSeleccionada.Fecha = InputFecha;
 
-                Reservas = _db.Reserva.ToList();
+                _reservaService.ActualizarReserva(InputReservaSeleccionada);
+                RefrescarDatos();
             }
-            catch (Exception ex)
-            {
-                ErrorAforo = $"Error al modificar la reserva: {ex.Message}";
+            catch (Exception ex) {
+                Errores(ex);
             }
         }
 
-        // ELIMINAR RESERVA
         private void EliminarReserva()
         {
-            if (ReservaSeleccionada == null) { 
-                return; 
-            }
+            LimpiarErrores();
 
-            try
+            if (InputReservaSeleccionada == null)
             {
-                _db.Reserva.Remove(ReservaSeleccionada);
-                _db.SaveChanges();
-
-                Reservas = _db.Reserva.ToList();
-                LimpiarFormulario();
+                return;
             }
-            catch (Exception ex)
-            {
-                ErrorAforo = $"Error al eliminar la reserva: {ex.Message}";
-            }
+            _reservaService.EliminarReserva(InputReservaSeleccionada);
+            RefrescarDatos();
+            LimpiarFormulario();
         }
 
-        // LIMPIAR FORMULARIO
+        private void Errores(Exception ex)
+        {
+            string msg = ex.Message;
+
+            if (msg.Contains("socio"))
+            {
+                ErrorSocio = msg;
+            }
+            else if (msg.Contains("actividad") || msg.Contains("aforo"))
+            {
+                ErrorActividad = msg;
+            }
+            else if (msg.Contains("fecha"))
+            {
+                ErrorFecha = msg;
+            }
+            else
+            {
+
+                ErrorSolapamiento = msg;
+            }
+
+        }
+
         private void LimpiarFormulario()
         {
-            SocioId = 0;
-            ActividadId = 0;
-            Fecha = DateTime.Now;
+            InputSocioId = 0; 
+            InputActividadId = 0; 
+            InputFecha = DateTime.Now;
+            LimpiarErrores();
+            InputReservaSeleccionada = null;
+        }
 
+        private void LimpiarErrores()
+        {
             ErrorSocio = "";
             ErrorActividad = "";
             ErrorFecha = "";
             ErrorAforo = "";
             ErrorSolapamiento = "";
-
-            ReservaSeleccionada = null;
         }
 
         private void GenerarInformeActividad()
         {
             try
             {
-                if (this.ActividadId == 0)
+                if (this.InputActividadId == 0)
                 {
-                    System.Windows.MessageBox.Show("Por favor, selecciona una actividad primero.");
+                    ErrorActividad = "Selecciona una actividad para generar el informe.";
                     return;
                 }
 
                 var miReporte = new crReservasActividad();
 
-                var datos = _db.Reserva
-                    .Where(r => r.ActividadId == this.ActividadId)
-                    .Select(r => new
-                    {
-                        NombreActividad = r.Actividad.Nombre,
-                        FechaReserva = r.Fecha,
-                        NombreSocio = r.Socio.Nombre,
-                        AforoMaximo = r.Actividad.AforoMaximo,
-                        IdActividad = r.ActividadId
-                    }).ToList();
+                using (var db = new CentroDeportivoEntities())
+                {
+                    var datos = db.Reserva
+                        .Where(r => r.ActividadId == this.InputActividadId)
+                        .Select(r => new
+                        {
+                            NombreActividad = r.Actividad.Nombre,
+                            FechaReserva = r.Fecha,
+                            NombreSocio = r.Socio.Nombre,
+                            AforoMaximo = r.Actividad.AforoMaximo,
+                            IdActividad = r.ActividadId
+                        }).ToList();
 
-                miReporte.SetDataSource(datos);
+                    miReporte.SetDataSource(datos);
+                }
 
-                miReporte.SetParameterValue("paramIdActividad", this.ActividadId);
+                miReporte.SetParameterValue("paramIdActividad", this.InputActividadId);
 
                 var ventanaVisor = new InformesView();
                 ventanaVisor.reportViewer.ViewerCore.ReportSource = miReporte;
@@ -457,7 +319,7 @@ namespace ViewModel
             }
             catch (Exception ex)
             {
-                System.Windows.MessageBox.Show($"Error al generar el informe de actividad: {ex.Message}");
+                ErrorAforo = $"Error en informe: {ex.Message}";
             }
         }
 
@@ -467,17 +329,20 @@ namespace ViewModel
             {
                 var miReporte = new crReservasSocio();
 
-                var datos = _db.Reserva
-                    .Select(r => new
-                    {
-                        NombreSocio = r.Socio.Nombre,
-                        NombreActividad = r.Actividad.Nombre,
-                        FechaReserva = r.Fecha
-                    })
-                    .OrderBy(r => r.FechaReserva) 
-                    .ToList();
+                using (var db = new CentroDeportivoEntities())
+                {
+                    var datos = db.Reserva
+                        .Select(r => new
+                        {
+                            NombreSocio = r.Socio.Nombre,
+                            NombreActividad = r.Actividad.Nombre,
+                            FechaReserva = r.Fecha
+                        })
+                        .OrderBy(r => r.FechaReserva)
+                        .ToList();
 
-                miReporte.SetDataSource(datos);
+                    miReporte.SetDataSource(datos);
+                }
 
                 var ventanaVisor = new InformesView();
                 ventanaVisor.reportViewer.ViewerCore.ReportSource = miReporte;
@@ -485,17 +350,12 @@ namespace ViewModel
             }
             catch (Exception ex)
             {
-                System.Windows.MessageBox.Show($"Error: {ex.Message}");
+                ErrorAforo = $"Error en historial: {ex.Message}";
             }
         }
 
-        // INotifyPropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChanged(string propertyName)
-        {
-           PropertyChanged?.Invoke(this, new
-           PropertyChangedEventArgs(propertyName));
-        }
-
+        protected void OnPropertyChanged(string propertyName) =>
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 }

@@ -1,0 +1,12 @@
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\Model\bin\Release\Model.dll.config
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\Model\bin\Release\Model.dll
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\Model\bin\Release\Model.pdb
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\Model\bin\Release\EntityFramework.dll
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\Model\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\Model\bin\Release\EntityFramework.xml
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\Model\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\Model\obj\Release\Model.csproj.AssemblyReference.cache
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\Model\obj\Release\Model.csproj.CoreCompileInputs.cache
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\Model\obj\Release\Model.csproj.Up2Date
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\Model\obj\Release\Model.dll
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\Model\obj\Release\Model.pdb

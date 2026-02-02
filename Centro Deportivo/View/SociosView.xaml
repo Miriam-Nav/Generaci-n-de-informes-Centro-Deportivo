@@ -49,19 +49,19 @@
 
                     <!-- Nombre -->
                     <TextBlock Text="Nombre *" Style="{StaticResource LabelStyle}"/>
-                    <TextBox Text="{Binding Nombre}" Style="{StaticResource TextBoxStyle}"/>
+                    <TextBox Text="{Binding InputNombre}" Style="{StaticResource TextBoxStyle}"/>
                     <TextBlock Text="{Binding ErrorNombre}" Style="{StaticResource ErrorMensajeStyle}"/>
 
                     <!-- Email -->
                     <TextBlock Text="Email *"
                            Style="{StaticResource LabelStyle}"
                            Margin="0,15,0,0"/>
-                    <TextBox Text="{Binding Email}" Style="{StaticResource TextBoxStyle}"/>
+                    <TextBox Text="{Binding InputEmail}" Style="{StaticResource TextBoxStyle}"/>
                     <TextBlock Text="{Binding ErrorEmail}" Style="{StaticResource ErrorMensajeStyle}"/>
 
                     <!-- Activo -->
                     <TextBlock Text="Estado" Style="{StaticResource LabelStyle}" Margin="0,15,0,10"/>
-                    <CheckBox Content="Activo" IsChecked="{Binding Activo}"
+                    <CheckBox Content="Activo" IsChecked="{Binding EsActivo}"
                           FontSize="14" Foreground="#2C3E50"/>
 
                     <!-- Botones -->

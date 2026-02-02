@@ -49,12 +49,12 @@
 
                     <!-- Nombre -->
                     <TextBlock Text="Nombre:" Style="{StaticResource LabelStyle}"/>
-                    <TextBox Text="{Binding NombreActividad}" Style="{StaticResource TextBoxStyle}"/>
+                    <TextBox Text="{Binding InputNombreActividad}" Style="{StaticResource TextBoxStyle}"/>
                     <TextBlock Text="{Binding ErrorNombre}" Style="{StaticResource ErrorMensajeStyle}"/>
 
                     <!-- Aforo -->
                     <TextBlock Text="Aforo Máximo:" Style="{StaticResource LabelStyle}" Margin="0,15,0,0"/>
-                    <TextBox Text="{Binding AforoMaximo}" Style="{StaticResource TextBoxStyle}"/>
+                    <TextBox Text="{Binding InputAforoMaximo}" Style="{StaticResource TextBoxStyle}"/>
                     <TextBlock Text="{Binding ErrorAforo}" Style="{StaticResource ErrorMensajeStyle}"/>
 
                     <!-- Botones -->

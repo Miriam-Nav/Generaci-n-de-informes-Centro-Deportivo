@@ -80,12 +80,15 @@
       <DependentUpon>ModelCentroDeportivo.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositorios\ActividadRepositorio.cs" />
+    <Compile Include="Repositorios\ReservaRepositorio.cs" />
     <Compile Include="Reserva.cs">
       <DependentUpon>ModelCentroDeportivo.tt</DependentUpon>
     </Compile>
     <Compile Include="Socio.cs">
       <DependentUpon>ModelCentroDeportivo.tt</DependentUpon>
     </Compile>
+    <Compile Include="Repositorios\SocioRepositorio.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

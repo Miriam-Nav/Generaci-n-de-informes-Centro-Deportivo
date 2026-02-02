@@ -1,0 +1,34 @@
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\ViewModel\bin\Release\ViewModel.dll.config
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\ViewModel\bin\Release\ViewModel.dll
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\ViewModel\bin\Release\ViewModel.pdb
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\ViewModel\bin\Release\Centro Deportivo.exe
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\ViewModel\bin\Release\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\ViewModel\bin\Release\CrystalDecisions.ReportSource.dll
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\ViewModel\bin\Release\CrystalDecisions.Shared.dll
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\ViewModel\bin\Release\EntityFramework.dll
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\ViewModel\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\ViewModel\bin\Release\Model.dll
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\ViewModel\bin\Release\SAPBusinessObjects.WPF.Viewer.dll
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\ViewModel\bin\Release\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\ViewModel\bin\Release\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\ViewModel\bin\Release\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\ViewModel\bin\Release\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\ViewModel\bin\Release\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\ViewModel\bin\Release\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\ViewModel\bin\Release\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\ViewModel\bin\Release\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\ViewModel\bin\Release\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\ViewModel\bin\Release\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\ViewModel\bin\Release\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\ViewModel\bin\Release\SAPBusinessObjects.WPF.ViewerShared.dll
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\ViewModel\bin\Release\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\ViewModel\bin\Release\Centro Deportivo.pdb
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\ViewModel\bin\Release\Model.pdb
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\ViewModel\bin\Release\Model.dll.config
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\ViewModel\bin\Release\EntityFramework.xml
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\ViewModel\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\ViewModel\obj\Release\ViewModel.csproj.AssemblyReference.cache
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\ViewModel\obj\Release\ViewModel.csproj.CoreCompileInputs.cache
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\ViewModel\obj\Release\ViewModel.csproj.Up2Date
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\ViewModel\obj\Release\ViewModel.dll
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\ViewModel\obj\Release\ViewModel.pdb

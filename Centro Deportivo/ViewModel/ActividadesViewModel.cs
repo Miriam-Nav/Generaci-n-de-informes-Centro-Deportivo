@@ -1,16 +1,19 @@
 ﻿using Model;
+using Model.Repositorios;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Windows.Input;
+using ViewModel.Services;
 
 namespace ViewModel
 {
     public class ActividadesViewModel : INotifyPropertyChanged
     {
-        private CentroDeportivoEntities _db = new CentroDeportivoEntities();
+        private readonly ActividadesService _actividadService = new ActividadesService();
+        private readonly ActividadRepositorio _repo = new ActividadRepositorio();
 
         // LISTA DE ACTIVIDADES
         private List<Actividad> _actividades;
@@ -38,8 +41,8 @@ namespace ViewModel
 
                 if (value != null)
                 {
-                    NombreActividad = value.Nombre;
-                    AforoMaximo = value.AforoMaximo.ToString();
+                    InputNombreActividad = value.Nombre;
+                    InputAforoMaximo = value.AforoMaximo.ToString();
                 }
             }
         }
@@ -48,25 +51,25 @@ namespace ViewModel
 
         // Nombre Actividad
         private string _nombreActividad;
-        public string NombreActividad
+        public string InputNombreActividad
         {
             get => _nombreActividad;
             set
             {
                 _nombreActividad = value;
-                OnPropertyChanged(nameof(NombreActividad));
+                OnPropertyChanged(nameof(InputNombreActividad));
             }
         }
 
         // Aforo Maximo
         private string _aforoMaximo;
-        public string AforoMaximo
+        public string InputAforoMaximo
         {
             get => _aforoMaximo;
             set
             {
                 _aforoMaximo = value;
-                OnPropertyChanged(nameof(AforoMaximo));
+                OnPropertyChanged(nameof(InputAforoMaximo));
             }
         }
 
@@ -116,217 +119,122 @@ namespace ViewModel
         // CONSTRUCTOR
         public ActividadesViewModel()
         {
-            try
-            {
-                var actividades = _db.Actividad.ToList();
-                Actividades = new List<Actividad>(actividades);
-            }
-            catch (Exception ex)
-            {
-                ErrorActividad = $"Error al cargar los datos: {ex.Message}";
-            }
-
+            RefrescarLista();
             CrearCommand = new RelayCommand(CrearActividad);
             ModificarCommand = new RelayCommand(ModificarActividad);
             EliminarCommand = new RelayCommand(EliminarActividad);
             LimpiarCommand = new RelayCommand(LimpiarFormulario);
         }
 
-        // VALIDACIONES
-        // Validación Nombre
-        private bool ValidarNombreCrear()
+        private void RefrescarLista()
         {
-            if (string.IsNullOrWhiteSpace(NombreActividad))
-            {
-                ErrorNombre = "El nombre no puede estar vacío";
-                return false;
-            }
-
-            bool nombreExiste = _db.Actividad.Any(actividad => actividad.Nombre == NombreActividad);
-
-            if (nombreExiste)
-            {
-                ErrorNombre = "Ya existe una actividad con este nombre";
-                return false;
-            }
-
-            ErrorNombre = "";
-            return true;
+            Actividades = _repo.Seleccionar();
         }
 
-        private bool ValidarNombreModificar()
-        {
-            if (string.IsNullOrWhiteSpace(NombreActividad))
-            {
-                ErrorNombre = "El nombre no puede estar vacío";
-                return false;
-            }
+        private void LimpiarErrores() {
 
-            bool nombreExiste = _db.Actividad.Any(actividad => actividad.Nombre == NombreActividad && actividad.Id != ActividadSeleccionada.Id);
+                ErrorNombre = "";
 
-            if (nombreExiste)
-            {
-                ErrorNombre = "Ya existe una actividad con este nombre";
-                return false;
-            }
-
-            ErrorNombre = "";
-            return true;
+                ErrorAforo = "";
+           
+                ErrorActividad = "";
         }
 
-        // Validación Aforo
-        private bool ValidarAforo()
-        {
-            if (string.IsNullOrWhiteSpace(AforoMaximo))
-            {
-                ErrorAforo = "Debes introducir un número";
-                return false;
-            }
-
-            if (!int.TryParse(AforoMaximo, out int aforo))
-            {
-                ErrorAforo = "Debes introducir un número";
-                return false;
-            }
-
-            if (int.Parse(AforoMaximo) <= 0)
-            {
-                ErrorAforo = "El aforo debe ser mayor que 0";
-                return false;
-            }
-
-            ErrorAforo = "";
-            return true;
-        }
-
-        // Validación Formulario
-        private bool ValidarFormulario(bool crear)
-        {
-            bool okNombre = false;
-            if (crear)
-            {
-                okNombre = ValidarNombreCrear();
-            }
-            else
-            {
-                okNombre = ValidarNombreModificar();
-            }
-
-            bool okAforo = ValidarAforo();
-
-            return okNombre && okAforo;
-        }
-
-        // CREAR ACTIVIDAD
         private void CrearActividad()
         {
-            // Comprueba que todas las validaciones del formulario sean true
-            bool resultado = ValidarFormulario(true);
-
-            if (!resultado)
-            {
-                return;
-            }
-
             try
             {
-                var nueva = new Actividad
+                LimpiarErrores();
+
+                int aforo = 0;
+
+                if (int.TryParse(InputAforoMaximo, out int result))
                 {
-                    Nombre = NombreActividad,
-                    AforoMaximo = int.Parse(AforoMaximo)
-                };
-
-                _db.Actividad.Add(nueva);
-                _db.SaveChanges();
-
-                Actividades = _db.Actividad.ToList();
-                LimpiarFormulario();
-            }
-            catch (Exception ex)
-            {
-                ErrorActividad = $"Error al crear la actividad: {ex.Message}";
-            }
-        }
-
-        // MODIFICAR ACTIVIDAD
-        private void ModificarActividad()
-        {
-            if (ActividadSeleccionada == null)
-            {
-                return;
-            }
-
-            bool resultado = ValidarFormulario(false);
-
-            if (!resultado)
-            {
-                return;
-            }
-            try
-            {
-
-                ActividadSeleccionada.Nombre = NombreActividad;
-                ActividadSeleccionada.AforoMaximo = int.Parse(AforoMaximo);
-
-                _db.SaveChanges();
-
-                Actividades = _db.Actividad.ToList();
-            }
-            catch (Exception ex)
-            {
-                ErrorActividad = $"Error al modificar la actividad: {ex.Message}";
-            }
-        }
-
-        // ELIMINAR ACTIVIDAD
-        private void EliminarActividad()
-        {
-            if (ActividadSeleccionada == null)
-            {
-                return;
-            }
-            try
-            {
-
-                // Validar si tiene reservas
-                bool tieneReservas = _db.Reserva.Any(reserva => reserva.ActividadId == ActividadSeleccionada.Id);
-
-                if (tieneReservas)
-                {
-                    ErrorActividad = "No se puede eliminar: la actividad tiene reservas asignadas.";
-                    return;
+                    aforo = result;
                 }
 
-                _db.Actividad.Remove(ActividadSeleccionada);
-                _db.SaveChanges();
+                var nueva = new Actividad { Nombre = InputNombreActividad, AforoMaximo = aforo };
 
-                Actividades = _db.Actividad.ToList();
+                _actividadService.CrearActividad(nueva);
+
+                RefrescarLista();
                 LimpiarFormulario();
-
             }
-            catch (Exception ex)
+            catch (ArgumentException ex)
             {
-                ErrorActividad = $"Error al eliminar la actividad: {ex.Message}";
+                // REPARTIDOR DE ERRORES
+                if (ex.Message.Contains("nombre"))
+                    ErrorNombre = ex.Message;
+                else if (ex.Message.Contains("aforo"))
+                    ErrorAforo = ex.Message;
+                else
+                    ErrorActividad = ex.Message;
             }
         }
 
-        // LIMPIAR FORMULARIO
+        private void ModificarActividad()
+        {
+            if (ActividadSeleccionada == null) return;
+
+            try
+            {
+                LimpiarErrores();
+
+                int aforo = 0;
+
+                if (int.TryParse(InputAforoMaximo, out int result))
+                {
+                    aforo = result;
+                }
+
+                ActividadSeleccionada.Nombre = InputNombreActividad;
+                ActividadSeleccionada.AforoMaximo = aforo;
+
+                _actividadService.ActualizarActividad(ActividadSeleccionada);
+
+                RefrescarLista();
+                LimpiarFormulario();
+            }
+            catch (ArgumentException ex)
+            {
+                // REPARTIDOR DE ERRORES
+                if (ex.Message.Contains("nombre"))
+                    ErrorNombre = ex.Message;
+                else if (ex.Message.Contains("aforo"))
+                    ErrorAforo = ex.Message;
+                else
+                    ErrorActividad = ex.Message;
+            }
+        }
+
+        private void EliminarActividad()
+        {
+            if (ActividadSeleccionada == null) return;
+
+            try
+            {
+                LimpiarErrores();
+
+                _actividadService.EliminarActividad(ActividadSeleccionada);
+                RefrescarLista();
+                LimpiarFormulario();
+            }
+            catch (InvalidOperationException ex)
+            {
+                ErrorActividad = ex.Message;
+            }
+        }
+
         private void LimpiarFormulario()
         {
-            NombreActividad = "";
-            AforoMaximo = null;
-            ErrorNombre = "";
-            ErrorAforo = "";
-            ErrorActividad = "";
+            InputNombreActividad = "";
+            InputAforoMaximo = "";
+            LimpiarErrores();
             ActividadSeleccionada = null;
         }
 
-        // INotifyPropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new
-            PropertyChangedEventArgs(propertyName));
-        }
+        protected void OnPropertyChanged(string propertyName) =>
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 }

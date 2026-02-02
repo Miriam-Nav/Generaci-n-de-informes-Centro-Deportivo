@@ -47,7 +47,7 @@
                     <!-- Socio -->
                     <TextBlock Text="Socio *" Style="{StaticResource LabelStyle}" Margin="0,0,0,0"/>
                     <ComboBox ItemsSource="{Binding Socios}"
-                              SelectedValue="{Binding SocioId}"
+                              SelectedValue="{Binding InputSocioId}"
                               SelectedValuePath="Id"
                               DisplayMemberPath="Nombre"
                               Style="{StaticResource ComboBoxStyle}"/>
@@ -59,7 +59,7 @@
                                Style="{StaticResource LabelStyle}"
                                Margin="0,15,0,0"/>
                     <ComboBox ItemsSource="{Binding Actividades}"
-                              SelectedValue="{Binding ActividadId}"
+                              SelectedValue="{Binding InputActividadId}"
                               SelectedValuePath="Id"
                               DisplayMemberPath="Nombre"
                               Style="{StaticResource ComboBoxStyle}"/>
@@ -70,7 +70,7 @@
                     <TextBlock Text="Fecha *"
                                Style="{StaticResource LabelStyle}"
                                Margin="0,15,0,0"/>
-                    <DatePicker SelectedDate="{Binding Fecha}" Style="{StaticResource DatePickerEstilo}"/>
+                    <DatePicker SelectedDate="{Binding InputFecha}" Style="{StaticResource DatePickerEstilo}"/>
                     <TextBlock Text="{Binding ErrorFecha}" Style="{StaticResource ErrorMensajeStyle}"/>
                     <TextBlock Text="{Binding ErrorAforo}" Style="{StaticResource ErrorMensajeStyle}"/>
                     <TextBlock Text="{Binding ErrorSolapamiento}" Style="{StaticResource ErrorMensajeStyle}"/>
@@ -106,8 +106,8 @@
                     </Grid.RowDefinitions>
 
                     <DataGrid Grid.Row="0" 
-                  ItemsSource="{Binding Reservas}"
-                  SelectedItem="{Binding ReservaSeleccionada}"
+                  ItemsSource="{Binding InputReservas}"
+                  SelectedItem="{Binding InputReservaSeleccionada}"
                   Style="{StaticResource DataGridStyle}"
                   Margin="0,0,0,15">
                         <DataGrid.Columns>
