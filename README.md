@@ -50,5 +50,5 @@ Sigue estos pasos para configurar el entorno de desarrollo:
 
 **Calendario de Reservas** 
 ## Autores
-**Maria Emilia Navalón Vidal** 
-**IES L'Estació - 2025/2026**
+**Maria Emilia Navalón Vidal** <br>
+*IES L'Estació - 2025/2026*
