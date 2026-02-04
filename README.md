@@ -31,6 +31,7 @@ Sigue estos pasos para configurar el entorno de desarrollo:
 <img width="732" height="494" alt="1" src="https://github.com/user-attachments/assets/ea1c7a7d-ab33-4137-ad8d-9218b19cecea" />
 
 **Inicio** 
+
 ---
 
 <img width="775" height="499" alt="4" src="https://github.com/user-attachments/assets/64bdfd8d-ae17-42a7-a33b-27d0c0fc232b" />
