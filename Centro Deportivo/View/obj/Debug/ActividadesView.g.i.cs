@@ -52,7 +52,7 @@ namespace View {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Centro Deportivo;component/actividadesview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/CentroDeportivo;component/actividadesview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\ActividadesView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

@@ -1709,9 +1709,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Miriam\\Desktop\\DESARROLLO DE INTERFICIES\\Informes\\CD iNFORME\\Centro Deportivo\\CentroDeportivo.Test\\CentroDeportivo.Test.csproj",
-      "projectName": "CentroDeportivo.Test",
-      "projectPath": "C:\\Users\\Miriam\\Desktop\\DESARROLLO DE INTERFICIES\\Informes\\CD iNFORME\\Centro Deportivo\\CentroDeportivo.Test\\CentroDeportivo.Test.csproj",
+      "projectUniqueName": "C:\\Users\\Miriam\\Desktop\\DESARROLLO DE INTERFICIES\\Informes\\CD iNFORME\\Centro Deportivo\\CentroDeportivo.Test\\CentroDeportivo_Test.Test.csproj",
+      "projectName": "CentroDeportivo_Test.Test",
+      "projectPath": "C:\\Users\\Miriam\\Desktop\\DESARROLLO DE INTERFICIES\\Informes\\CD iNFORME\\Centro Deportivo\\CentroDeportivo.Test\\CentroDeportivo_Test.Test.csproj",
       "packagesPath": "C:\\Users\\Miriam\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Miriam\\Desktop\\DESARROLLO DE INTERFICIES\\Informes\\CD iNFORME\\Centro Deportivo\\CentroDeportivo.Test\\obj\\",
       "projectStyle": "PackageReference",

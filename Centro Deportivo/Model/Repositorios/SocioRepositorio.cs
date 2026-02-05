@@ -5,24 +5,38 @@ using System.Linq;
 
 namespace Model.Repositorios
 {
+    /// <summary>
+    /// Repositorio para gestionar las operaciones de la entidad Socio.
+    /// Permite realizar operaciones de leer, crear, actualizar y eliminar registros en la base de datos.
+    /// </summary>
     public class SocioRepositorio
     {
         private readonly CentroDeportivoEntities _db = new CentroDeportivoEntities();
 
-        // OBTENER LISTA DE SOCIOS
+        /// <summary>
+        /// Obtiene la lista completa de socios almacenados.
+        /// </summary>
+        /// <returns>Una lista de objetos de tipo <see cref="Socio"/>.</returns>
         public List<Socio> Seleccionar()
         {
             return _db.Socio.ToList();
         }
 
-        // CREAR SOCIO
+        /// <summary>
+        /// Crea un nuevo socio en la base de datos.
+        /// </summary>
+        /// <param name="socio">Objeto Socio con los datos a insertar.</param>
         public void Crear(Socio socio)
         {
             _db.Socio.Add(socio);
             _db.SaveChanges();
         }
 
-        // GUARDAR SOCIO
+        /// <summary>
+        /// Actualiza los datos de un socio de la base de datos.
+        /// </summary>
+        /// <param name="socioEditado">Objeto socio con los datos actualizados.</param>
+        /// <exception cref="Exception">Lanza una excepción si el socio no existe en la base de datos.</exception>
         public void Guardar(Socio socioEditado)
         {
             using (var db = new CentroDeportivoEntities())
@@ -44,7 +58,10 @@ namespace Model.Repositorios
             }
         }
 
-        // ELIMINAR SOCIO
+        /// <summary>
+        /// Elimina un socio de la base de datos.
+        /// </summary>
+        /// <param name="socio">>El socio que se desea eliminar (se utiliza su Id para la búsqueda).</param>
         public void Eliminar(Socio socio)
         {
             // Busca el socio real en DB usando su ID

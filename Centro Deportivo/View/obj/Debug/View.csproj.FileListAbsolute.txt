@@ -72,7 +72,6 @@ C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Dep
 C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\View\obj\Debug\MainWindow.baml
 C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\View\obj\Debug\ReservasView.baml
 C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\View\obj\Debug\SociosView.baml
-C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\View\obj\Debug\View.Properties.Resources.resources
 C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\View\obj\Debug\View.csproj.GenerateResource.cache
 C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\View\obj\Debug\View.csproj.CoreCompileInputs.cache
 C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\View\obj\Debug\View.csproj.Up2Date
@@ -95,14 +94,16 @@ C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Dep
 C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\View\bin\Debug\SAPBusinessObjects.WPF.ViewerShared.dll
 C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\View\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\View\bin\Debug\Centro Deportivo.pdb
-C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\View\bin\Debug\Centro Deportivo.exe.config
-C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\View\bin\Debug\Centro Deportivo.exe.manifest
-C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\View\bin\Debug\Centro Deportivo.application
-C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\View\obj\Debug\Centro Deportivo_MarkupCompile.cache
-C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\View\obj\Debug\Centro Deportivo_MarkupCompile.lref
-C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\View\obj\Debug\Centro Deportivo.g.resources
-C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\View\obj\Debug\Centro Deportivo.exe.manifest
-C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\View\obj\Debug\Centro Deportivo.application
-C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\View\obj\Debug\Centro Deportivo.exe
-C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\View\obj\Debug\Centro Deportivo.pdb
-C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\View\obj\Debug\Centro Deportivo.exe.config
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\View\bin\Debug\CentroDeportivo.exe.config
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\View\bin\Debug\CentroDeportivo.exe.manifest
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\View\bin\Debug\CentroDeportivo.application
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\View\bin\Debug\CentroDeportivo.exe
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\View\bin\Debug\CentroDeportivo.pdb
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\View\obj\Debug\CentroDeportivo_MarkupCompile.cache
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\View\obj\Debug\CentroDeportivo_MarkupCompile.lref
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\View\obj\Debug\CentroDeportivo.g.resources
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\View\obj\Debug\CentroDeportivo.Properties.Resources.resources
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\View\obj\Debug\CentroDeportivo.exe.manifest
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\View\obj\Debug\CentroDeportivo.application
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\View\obj\Debug\CentroDeportivo.exe
+C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\View\obj\Debug\CentroDeportivo.pdb

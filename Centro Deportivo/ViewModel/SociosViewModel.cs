@@ -9,6 +9,10 @@ using ViewModel.Services;
 
 namespace ViewModel
 {
+    /// <summary>
+    /// ViewModel encargado de la gestión de socios del centro deportivo.
+    /// Controla la lógica de alta, modificación y baja, así como la validación de sus datos de contacto.
+    /// </summary>
     public class SociosViewModel : INotifyPropertyChanged
     {
         private readonly SocioService _socioService = new SocioService();
@@ -16,6 +20,7 @@ namespace ViewModel
 
         // LISTA DE SOCIOS 
         private List<Socio> _socios;
+        /// <summary> Lista completa de socios registrados en el sistema. </summary>
         public List<Socio> Socios
         {
             get => _socios;
@@ -27,6 +32,7 @@ namespace ViewModel
 
         // SOCIO SELECCIONADO
         private Socio _socioSeleccionado;
+        /// <summary> Socio seleccionado actualmente en el listado. Actualiza los campos del formulario al cambiar. </summary>
         public Socio SocioSeleccionado
         {
             get => _socioSeleccionado;
@@ -46,6 +52,7 @@ namespace ViewModel
 
         // CAMPOS DEL FORMULARIO
         private string _nombre;
+        /// <summary> Nombre completo del socio introducido en el formulario. </summary>
         public string InputNombre{ 
             get => _nombre; 
             set { 
@@ -55,6 +62,7 @@ namespace ViewModel
         }
 
         private string _email;
+        /// <summary> Dirección de correo electrónico del socio introducida en el formulario. </summary>
         public string InputEmail { 
             get => _email; 
             set { 
@@ -64,6 +72,7 @@ namespace ViewModel
         }
 
         private bool _activo;
+        /// <summary> Indica si el socio se encuentra en estado activo para realizar reservas. </summary>
         public bool EsActivo { 
             get => _activo; 
             set { 
@@ -75,6 +84,7 @@ namespace ViewModel
         // MENSAJES DE ERROR
         // Error Nombre
         private string _errorNombre;
+        /// <summary> Almacena el mensaje de error relacionado al nombre del socio. </summary>
         public string ErrorNombre
         {
             get => _errorNombre;
@@ -86,6 +96,7 @@ namespace ViewModel
         }
 
         private string _errorEmail;
+        /// <summary> Almacena el mensaje de error relacionado a la validación del correo electrónico. </summary>
         public string ErrorEmail { 
             get => _errorEmail; 
             set { 
@@ -94,13 +105,27 @@ namespace ViewModel
             } 
         }
 
-        // COMANDOS
+        // COMMANDS
+        /// <summary> Comando para registrar un nuevo socio en el sistema. </summary>
         public ICommand CrearCommand { get; }
+
+        /// <summary> Comando para actualizar la información del socio seleccionado. </summary>
         public ICommand ModificarCommand { get; }
+
+        /// <summary> Comando para eliminar al socio seleccionado del sistema. </summary>
         public ICommand EliminarCommand { get; }
+
+        /// <summary> Comando para resetear los campos del formulario y limpiar los mensajes de error. </summary>
         public ICommand LimpiarCommand { get; }
+
+        /// <summary> Comando para generar un informe con el listado completo de socios. </summary>
         public ICommand GenerarInformeCommand { get; }
 
+        // CONSTRUCTOR
+        /// <summary>
+        /// Constructor del ViewModel de Socios.
+        /// Carga la lista inicial y vincula los comandos a sus métodos.
+        /// </summary>
         public SociosViewModel()
         {
             RefrescarLista();
@@ -112,6 +137,9 @@ namespace ViewModel
             GenerarInformeCommand = new RelayCommand(GenerarInforme);
         }
 
+        /// <summary>
+        /// Actualiza la colección de socios consultando al repositorio.
+        /// </summary>
         private void RefrescarLista()
         {
             try
@@ -124,6 +152,9 @@ namespace ViewModel
             }
         }
 
+        /// <summary>
+        /// Crea un nuevo socio y gestiona posibles excepciones de validación.
+        /// </summary>
         private void CrearSocio()
         {
             try
@@ -144,6 +175,9 @@ namespace ViewModel
             }
         }
 
+        /// <summary>
+        /// Modifica los datos del socio seleccionado y gestiona posibles excepciones.
+        /// </summary>
         private void ModificarSocio()
         {
             if (SocioSeleccionado == null) return;
@@ -166,6 +200,9 @@ namespace ViewModel
             }
         }
 
+        /// <summary>
+        /// Gestiona la eliminación de un socio, capturando errores de integridad o restricciones.
+        /// </summary>
         private void EliminarSocio()
         {
             if (SocioSeleccionado == null)
@@ -185,6 +222,9 @@ namespace ViewModel
             }
         }
 
+        /// <summary>
+        /// Reinicia las propiedades del formulario de socios a su estado inicial.
+        /// </summary>
         private void LimpiarFormulario()
         {
             InputNombre = ""; 
@@ -195,6 +235,9 @@ namespace ViewModel
             SocioSeleccionado = null;
         }
 
+        /// <summary>
+        /// Genera y muestra un informe visual con el listado de socios.
+        /// </summary>
         private void GenerarInforme()
         {
             try
@@ -216,8 +259,11 @@ namespace ViewModel
                 System.Windows.MessageBox.Show($"Error al generar: {ex.Message}");
             }
         }
-
+        /// <summary> Evento para notificar cambios en las propiedades a la Vista. </summary>
         public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary> Invoca el evento PropertyChanged para una propiedad específica. </summary>
+        /// <param name="propertyName">Nombre de la propiedad modificada.</param>
         protected void OnPropertyChanged(string propertyName) =>
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }

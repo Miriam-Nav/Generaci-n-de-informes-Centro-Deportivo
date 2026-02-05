@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewModel", "ViewModel\View
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{5C7D417D-6F52-4146-BA5F-BD32A71E52C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CentroDeportivo.Test", "CentroDeportivo.Test\CentroDeportivo.Test.csproj", "{40A142F2-B399-4883-984F-92D81F86A1A6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CentroDeportivo_Test.Test", "CentroDeportivo.Test\CentroDeportivo_Test.Test.csproj", "{40A142F2-B399-4883-984F-92D81F86A1A6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

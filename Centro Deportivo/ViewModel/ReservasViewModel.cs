@@ -11,6 +11,10 @@ using System.Windows.Input;
 
 namespace ViewModel
 {
+    /// <summary>
+    /// ViewModel encargado de la gestión de reservas del centro deportivo.
+    /// Coordina la relación entre socios y actividades, valida solapamientos y gestiona la generación de informes.
+    /// </summary>
     public class ReservasViewModel : INotifyPropertyChanged
     {
         private readonly ReservasService _reservaService = new ReservasService();
@@ -20,6 +24,7 @@ namespace ViewModel
 
         // LISTA DE RESERVAS
         private List<Reserva> _reservas;
+        /// <summary> Lista completa de reservas registradas en el sistema. </summary>
         public List<Reserva> InputReservas
         {
             get => _reservas;
@@ -31,11 +36,14 @@ namespace ViewModel
         }
 
         // LISTAS PARA COMBOS
+        /// <summary> Listado de socios activos disponibles para realizar reservas. </summary>
         public List<Socio> Socios { get; set; }
+        /// <summary> Listado de todas las actividades deportivas ofertadas. </summary>
         public List<Actividad> Actividades { get; set; }
 
         // RESERVA SELECCIONADA
         private Reserva _reservaSeleccionada;
+        /// <summary> Reserva seleccionada actualmente en el listado. Actualiza los campos del formulario al cambiar. </summary>
         public Reserva InputReservaSeleccionada
         {
             get => _reservaSeleccionada;
@@ -56,6 +64,7 @@ namespace ViewModel
         // CAMPOS DEL FORMULARIO
         // SocioId
         private int _socioId;
+        /// <summary> Identificador del socio seleccionado en el formulario. </summary>
         public int InputSocioId
         {
             get => _socioId;
@@ -68,6 +77,7 @@ namespace ViewModel
 
         // ActividadId
         private int _actividadId;
+        /// <summary> Identificador de la actividad seleccionada en el formulario. </summary>
         public int InputActividadId
         {
             get => _actividadId;
@@ -80,6 +90,7 @@ namespace ViewModel
 
         // Fecha
         private DateTime _fecha = DateTime.Now;
+        /// <summary> Fecha y hora programada para la reserva introducida en el formulario. </summary>
         public DateTime InputFecha
         {
             get => _fecha;
@@ -93,6 +104,7 @@ namespace ViewModel
         // MENSAJES DE ERROR
         // Error Socio
         private string _errorSocio;
+        /// <summary> Almacena el mensaje de error relacionado a la selección o estado del socio. </summary>
         public string ErrorSocio
         {
             get => _errorSocio;
@@ -105,6 +117,7 @@ namespace ViewModel
 
         // Error Actividad
         private string _errorActividad;
+        /// <summary> Almacena el mensaje de error relacionado a la actividad o su disponibilidad. </summary>
         public string ErrorActividad
         {
             get => _errorActividad;
@@ -117,6 +130,7 @@ namespace ViewModel
 
         // Error Fecha
         private string _errorFecha;
+        /// <summary> Almacena el mensaje de error relacionado a la validación de la fecha. </summary>
         public string ErrorFecha
         {
             get => _errorFecha;
@@ -129,6 +143,7 @@ namespace ViewModel
 
         // Error Aforo
         private string _errorAforo;
+        /// <summary> Almacena el mensaje de error relacionado a la falta de aforo en la actividad. </summary>
         public string ErrorAforo
         {
             get => _errorAforo;
@@ -141,6 +156,7 @@ namespace ViewModel
 
         // Error Solapamiento
         private string _errorSolapamiento;
+        /// <summary> Almacena el mensaje de error cuando un socio intenta duplicar actividades en la misma hora. </summary>
         public string ErrorSolapamiento
         {
             get => _errorSolapamiento;
@@ -152,14 +168,29 @@ namespace ViewModel
         }
 
         // COMMANDS
+        /// <summary> Comando para registrar el alta de una nueva reserva. </summary>
         public ICommand CrearCommand { get; }
+
+        /// <summary> Comando para modificar los datos de la reserva seleccionada. </summary>
         public ICommand ModificarCommand { get; }
+
+        /// <summary> Comando para cancelar o eliminar la reserva seleccionada. </summary>
         public ICommand EliminarCommand { get; }
+
+        /// <summary> Comando para resetear los campos del formulario y limpiar los mensajes de error. </summary>
         public ICommand LimpiarCommand { get; }
+
+        /// <summary> Comando para generar el informe de una actividad específica. </summary>
         public ICommand GenerarInformeCommand { get; }
+
+        /// <summary> Comando para generar el historial completo de reservas de un socio. </summary>
         public ICommand GenerarHistorialCommand { get; }
 
         // CONSTRUCTOR
+        /// <summary>
+        /// Constructor del ViewModel de Reservas.
+        /// Carga los datos iniciales y vincula los comandos a sus métodos correspondientes.
+        /// </summary>
         public ReservasViewModel()
         {
             RefrescarDatos();
@@ -172,6 +203,9 @@ namespace ViewModel
             GenerarHistorialCommand = new RelayCommand(GenerarInformeHistorial);
         }
 
+        /// <summary>
+        /// Actualiza los listados de reservas, socios y actividades consultando a los repositorios.
+        /// </summary>
         private void RefrescarDatos()
         {
             try
@@ -185,6 +219,9 @@ namespace ViewModel
             }
         }
 
+        /// <summary>
+        /// Crea una nueva reserva y gestiona posibles excepciones.
+        /// </summary>
         private void CrearReserva()
         {
 
@@ -205,6 +242,9 @@ namespace ViewModel
             }
         }
 
+        /// <summary>
+        /// Modifica los datos de la reserva seleccionada y gestiona posibles excepciones.
+        /// </summary>
         private void ModificarReserva()
         {
             if (InputReservaSeleccionada == null)
@@ -228,6 +268,9 @@ namespace ViewModel
             }
         }
 
+        /// <summary>
+        /// Gestiona la eliminación de la reserva seleccionada, capturando errores.
+        /// </summary>
         private void EliminarReserva()
         {
             LimpiarErrores();
@@ -241,6 +284,9 @@ namespace ViewModel
             LimpiarFormulario();
         }
 
+        /// <summary>
+        /// Método que distribuye los mensajes de error de las excepciones hacia la interfaz.
+        /// </summary>
         private void Errores(Exception ex)
         {
             string msg = ex.Message;
@@ -259,12 +305,14 @@ namespace ViewModel
             }
             else
             {
-
                 ErrorSolapamiento = msg;
             }
 
         }
 
+        /// <summary>
+        /// Reinicia las propiedades del formulario de reservas a su estado inicial.
+        /// </summary>
         private void LimpiarFormulario()
         {
             InputSocioId = 0; 
@@ -273,7 +321,10 @@ namespace ViewModel
             LimpiarErrores();
             InputReservaSeleccionada = null;
         }
-
+        
+        /// <summary>
+        /// Limpia todos los mensajes de error activos en la interfaz de reservas.
+        /// </summary>
         private void LimpiarErrores()
         {
             ErrorSocio = "";
@@ -283,6 +334,9 @@ namespace ViewModel
             ErrorSolapamiento = "";
         }
 
+        /// <summary>
+        /// Genera y muestra un informe con los inscritos en la actividad seleccionada.
+        /// </summary>
         private void GenerarInformeActividad()
         {
             try
@@ -323,6 +377,9 @@ namespace ViewModel
             }
         }
 
+        /// <summary>
+        /// Genera y muestra un informe con el historial de todas las reservas registradas.
+        /// </summary>
         private void GenerarInformeHistorial()
         {
             try
@@ -354,8 +411,12 @@ namespace ViewModel
             }
         }
 
+        /// <summary> Evento para notificar cambios en las propiedades a la Vista. </summary>
         public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary> Invoca el evento PropertyChanged para una propiedad específica. </summary>
+        /// <param name="propertyName">Nombre de la propiedad modificada.</param>
         protected void OnPropertyChanged(string propertyName) =>
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 }

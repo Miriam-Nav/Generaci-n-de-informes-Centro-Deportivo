@@ -1,0 +1,298 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Centro Deportivo: Referencia de la clase ViewModel.Services.SocioService</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Centro Deportivo<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Gestió de Centro Deportivo</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',false);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a href="namespace_view_model.html">ViewModel</a></li><li class="navelem"><a href="namespace_view_model_1_1_services.html">Services</a></li><li class="navelem"><a href="class_view_model_1_1_services_1_1_socio_service.html">SocioService</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="class_view_model_1_1_services_1_1_socio_service-members.html">Lista de todos los miembros</a>  </div>
+  <div class="headertitle"><div class="title">Referencia de la clase ViewModel.Services.SocioService</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Servicio encargado de la lógica de negocio para la gestión de socios. Realiza validaciones de formato, comprobaciones de duplicidad de emails e integridad referencial.  
+ <a href="#details">Más...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:a366c4b80181c6fb856b7f29154567d35" id="r_a366c4b80181c6fb856b7f29154567d35"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a366c4b80181c6fb856b7f29154567d35">ValidarEmailFormato</a> (string email)</td></tr>
+<tr class="memdesc:a366c4b80181c6fb856b7f29154567d35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Comprueba si la cadena de texto proporcionada cumple con los requisitos mínimos de un correo electrónico.  <br /></td></tr>
+<tr class="memitem:a3f4181888cfa534db4ef8c45c721b806" id="r_a3f4181888cfa534db4ef8c45c721b806"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3f4181888cfa534db4ef8c45c721b806">ValidarSocio</a> (<a class="el" href="class_model_1_1_socio.html">Socio</a> socio, bool esNuevo)</td></tr>
+<tr class="memdesc:a3f4181888cfa534db4ef8c45c721b806"><td class="mdescLeft">&#160;</td><td class="mdescRight">Realiza las validaciones de negocio completas para un socio (nombre, formato de email y unicidad).  <br /></td></tr>
+<tr class="memitem:abf4cde13aa3f18448a06961e054c6323" id="r_abf4cde13aa3f18448a06961e054c6323"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#abf4cde13aa3f18448a06961e054c6323">CrearSocio</a> (<a class="el" href="class_model_1_1_socio.html">Socio</a> socio)</td></tr>
+<tr class="memdesc:abf4cde13aa3f18448a06961e054c6323"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registra un nuevo socio en el sistema tras validar sus datos.  <br /></td></tr>
+<tr class="memitem:a62fea4630b138dba086e804b5c050bd3" id="r_a62fea4630b138dba086e804b5c050bd3"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a62fea4630b138dba086e804b5c050bd3">ActualizarSocio</a> (<a class="el" href="class_model_1_1_socio.html">Socio</a> socio)</td></tr>
+<tr class="memdesc:a62fea4630b138dba086e804b5c050bd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actualiza la información de un socio existente previa validación.  <br /></td></tr>
+<tr class="memitem:a8916798208cbc41f8bf13105a793d0f6" id="r_a8916798208cbc41f8bf13105a793d0f6"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a8916798208cbc41f8bf13105a793d0f6">EliminarSocio</a> (<a class="el" href="class_model_1_1_socio.html">Socio</a> socio)</td></tr>
+<tr class="memdesc:a8916798208cbc41f8bf13105a793d0f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gestiona la eliminación de un socio verificando que no existan reservas activas.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Servicio encargado de la lógica de negocio para la gestión de socios. Realiza validaciones de formato, comprobaciones de duplicidad de emails e integridad referencial. </p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones miembro</h2>
+<a id="a62fea4630b138dba086e804b5c050bd3" name="a62fea4630b138dba086e804b5c050bd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62fea4630b138dba086e804b5c050bd3">&#9670;&#160;</a></span>ActualizarSocio()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ViewModel.Services.SocioService.ActualizarSocio </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_model_1_1_socio.html">Socio</a></td>          <td class="paramname"><span class="paramname"><em>socio</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Actualiza la información de un socio existente previa validación. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">socio</td><td><a class="el" href="class_model_1_1_socio.html" title="Representa a un socio del centro deportivo, incluyendo sus datos personales y el historial de sus res...">Socio</a> con los datos actualizados.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="abf4cde13aa3f18448a06961e054c6323" name="abf4cde13aa3f18448a06961e054c6323"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf4cde13aa3f18448a06961e054c6323">&#9670;&#160;</a></span>CrearSocio()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ViewModel.Services.SocioService.CrearSocio </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_model_1_1_socio.html">Socio</a></td>          <td class="paramname"><span class="paramname"><em>socio</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Registra un nuevo socio en el sistema tras validar sus datos. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">socio</td><td>Instancia del nuevo socio.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8916798208cbc41f8bf13105a793d0f6" name="a8916798208cbc41f8bf13105a793d0f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8916798208cbc41f8bf13105a793d0f6">&#9670;&#160;</a></span>EliminarSocio()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ViewModel.Services.SocioService.EliminarSocio </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_model_1_1_socio.html">Socio</a></td>          <td class="paramname"><span class="paramname"><em>socio</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gestiona la eliminación de un socio verificando que no existan reservas activas. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">socio</td><td><a class="el" href="class_model_1_1_socio.html" title="Representa a un socio del centro deportivo, incluyendo sus datos personales y el historial de sus res...">Socio</a> a eliminar.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Excepciones</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">InvalidOperationException</td><td>Lanzada si el socio tiene registros de reserva vinculados.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a366c4b80181c6fb856b7f29154567d35" name="a366c4b80181c6fb856b7f29154567d35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a366c4b80181c6fb856b7f29154567d35">&#9670;&#160;</a></span>ValidarEmailFormato()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ViewModel.Services.SocioService.ValidarEmailFormato </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>email</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Comprueba si la cadena de texto proporcionada cumple con los requisitos mínimos de un correo electrónico. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">email</td><td>Cadena de texto con el email a validar.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Verdadero si el formato es aceptable, falso en caso contrario.</dd></dl>
+
+</div>
+</div>
+<a id="a3f4181888cfa534db4ef8c45c721b806" name="a3f4181888cfa534db4ef8c45c721b806"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f4181888cfa534db4ef8c45c721b806">&#9670;&#160;</a></span>ValidarSocio()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ViewModel.Services.SocioService.ValidarSocio </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_model_1_1_socio.html">Socio</a></td>          <td class="paramname"><span class="paramname"><em>socio</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>esNuevo</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Realiza las validaciones de negocio completas para un socio (nombre, formato de email y unicidad). </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">socio</td><td>Objeto socio a validar.</td></tr>
+    <tr><td class="paramname">esNuevo</td><td>Define si es una creación (true) o una modificación (false) para el control de duplicados.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Excepciones</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ArgumentException</td><td>Lanzada cuando algún dato no cumple las reglas.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>La documentación de esta clase está generada del siguiente archivo:<ul>
+<li>C:/Users/Miriam/Desktop/DESARROLLO DE INTERFICIES/Informes/CD iNFORME/Centro Deportivo/ViewModel/Services/<b>SocioService.cs</b></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

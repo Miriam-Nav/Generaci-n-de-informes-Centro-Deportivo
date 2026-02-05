@@ -1,10 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Miriam\\Desktop\\DESARROLLO DE INTERFICIES\\Informes\\CD iNFORME\\Centro Deportivo\\",
+  "WorkspaceRootPath": "C:\\Users\\Miriam\\Desktop\\DESARROLLO DE INTERFICIES\\Informes\\CD Informe\\Centro Deportivo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{40A142F2-B399-4883-984F-92D81F86A1A6}|CentroDeportivo.Test\\CentroDeportivo.Test.csproj|c:\\users\\miriam\\desktop\\desarrollo de interficies\\informes\\cd informe\\centro deportivo\\centrodeportivo.test\\cdtest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{40A142F2-B399-4883-984F-92D81F86A1A6}|CentroDeportivo.Test\\CentroDeportivo.Test.csproj|solutionrelative:centrodeportivo.test\\cdtest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{201712D5-3944-42E3-96C4-09024F4CE674}|ViewModel\\ViewModel.csproj|c:\\users\\miriam\\desktop\\desarrollo de interficies\\informes\\cd informe\\centro deportivo\\viewmodel\\services\\socioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{201712D5-3944-42E3-96C4-09024F4CE674}|ViewModel\\ViewModel.csproj|solutionrelative:viewmodel\\services\\socioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{201712D5-3944-42E3-96C4-09024F4CE674}|ViewModel\\ViewModel.csproj|C:\\Users\\Miriam\\Desktop\\DESARROLLO DE INTERFICIES\\Informes\\CD Informe\\Centro Deportivo\\viewmodel\\services\\reservasservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{201712D5-3944-42E3-96C4-09024F4CE674}|ViewModel\\ViewModel.csproj|solutionrelative:viewmodel\\services\\reservasservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{201712D5-3944-42E3-96C4-09024F4CE674}|ViewModel\\ViewModel.csproj|C:\\Users\\Miriam\\Desktop\\DESARROLLO DE INTERFICIES\\Informes\\CD Informe\\Centro Deportivo\\viewmodel\\services\\actividadesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{201712D5-3944-42E3-96C4-09024F4CE674}|ViewModel\\ViewModel.csproj|solutionrelative:viewmodel\\services\\actividadesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,15 +27,39 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CDTest.cs",
-              "DocumentMoniker": "C:\\Users\\Miriam\\Desktop\\DESARROLLO DE INTERFICIES\\Informes\\CD iNFORME\\Centro Deportivo\\CentroDeportivo.Test\\CDTest.cs",
-              "RelativeDocumentMoniker": "CentroDeportivo.Test\\CDTest.cs",
-              "ToolTip": "C:\\Users\\Miriam\\Desktop\\DESARROLLO DE INTERFICIES\\Informes\\CD iNFORME\\Centro Deportivo\\CentroDeportivo.Test\\CDTest.cs",
-              "RelativeToolTip": "CentroDeportivo.Test\\CDTest.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAAACYAAAAAAAAAAAAAAA==",
+              "Title": "SocioService.cs",
+              "DocumentMoniker": "C:\\Users\\Miriam\\Desktop\\DESARROLLO DE INTERFICIES\\Informes\\CD Informe\\Centro Deportivo\\ViewModel\\Services\\SocioService.cs",
+              "RelativeDocumentMoniker": "ViewModel\\Services\\SocioService.cs",
+              "ToolTip": "C:\\Users\\Miriam\\Desktop\\DESARROLLO DE INTERFICIES\\Informes\\CD Informe\\Centro Deportivo\\ViewModel\\Services\\SocioService.cs",
+              "RelativeToolTip": "ViewModel\\Services\\SocioService.cs",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAowGUAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T11:48:22.927Z",
+              "WhenOpened": "2026-02-04T18:07:15.391Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ReservasService.cs",
+              "DocumentMoniker": "C:\\Users\\Miriam\\Desktop\\DESARROLLO DE INTERFICIES\\Informes\\CD Informe\\Centro Deportivo\\ViewModel\\Services\\ReservasService.cs",
+              "RelativeDocumentMoniker": "ViewModel\\Services\\ReservasService.cs",
+              "ToolTip": "C:\\Users\\Miriam\\Desktop\\DESARROLLO DE INTERFICIES\\Informes\\CD Informe\\Centro Deportivo\\ViewModel\\Services\\ReservasService.cs",
+              "RelativeToolTip": "ViewModel\\Services\\ReservasService.cs",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAowHEAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-04T18:03:22.179Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ActividadesService.cs",
+              "DocumentMoniker": "C:\\Users\\Miriam\\Desktop\\DESARROLLO DE INTERFICIES\\Informes\\CD Informe\\Centro Deportivo\\ViewModel\\Services\\ActividadesService.cs",
+              "RelativeDocumentMoniker": "ViewModel\\Services\\ActividadesService.cs",
+              "ToolTip": "C:\\Users\\Miriam\\Desktop\\DESARROLLO DE INTERFICIES\\Informes\\CD Informe\\Centro Deportivo\\ViewModel\\Services\\ActividadesService.cs",
+              "RelativeToolTip": "ViewModel\\Services\\ActividadesService.cs",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAkwHsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-04T17:24:36.999Z"
             }
           ]
         }

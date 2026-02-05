@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Centro Deportivo: Referencia de la clase RelayCommand</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Centro Deportivo<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Gestió de Centro Deportivo</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',false);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="#events">Eventos</a> &#124;
+<a href="class_relay_command-members.html">Lista de todos los miembros</a>  </div>
+  <div class="headertitle"><div class="title">Referencia de la clase RelayCommand</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Implementación reutilizable de ICommand para enlazar acciones del <a class="el" href="namespace_view_model.html">ViewModel</a> con la Vista.  
+ <a href="#details">Más...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:acb897734c20bbaf32e8b2222f669b332" id="r_acb897734c20bbaf32e8b2222f669b332"><td class="memItemLeft"><a id="acb897734c20bbaf32e8b2222f669b332" name="acb897734c20bbaf32e8b2222f669b332"></a>
+&#160;</td><td class="memItemRight"><b>RelayCommand</b> (Action execute, Func&lt; bool &gt; canExecute=null)</td></tr>
+<tr class="memitem:a4550a344e1e9d3589eaf37cf4a1ba7a7" id="r_a4550a344e1e9d3589eaf37cf4a1ba7a7"><td class="memItemLeft"><a id="a4550a344e1e9d3589eaf37cf4a1ba7a7" name="a4550a344e1e9d3589eaf37cf4a1ba7a7"></a>
+bool&#160;</td><td class="memItemRight"><b>CanExecute</b> (object parameter)</td></tr>
+<tr class="memitem:a62136b7eca4542b47e874b3de97c4657" id="r_a62136b7eca4542b47e874b3de97c4657"><td class="memItemLeft"><a id="a62136b7eca4542b47e874b3de97c4657" name="a62136b7eca4542b47e874b3de97c4657"></a>
+void&#160;</td><td class="memItemRight"><b>Execute</b> (object parameter)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-events" class="groupheader"><a id="events" name="events"></a>
+Eventos</h2></td></tr>
+<tr class="memitem:a70399f94d9c09f56d569f712aca8adbb" id="r_a70399f94d9c09f56d569f712aca8adbb"><td class="memItemLeft"><a id="a70399f94d9c09f56d569f712aca8adbb" name="a70399f94d9c09f56d569f712aca8adbb"></a>
+EventHandler&#160;</td><td class="memItemRight"><b>CanExecuteChanged</b><code> [add, remove]</code></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Implementación reutilizable de ICommand para enlazar acciones del <a class="el" href="namespace_view_model.html">ViewModel</a> con la Vista. </p>
+<ul>
+<li>_execute: acción a ejecutar cuando el comando se invoca.</li>
+<li>_canExecute: función opcional que determina si el comando puede ejecutarse. </li>
+</ul>
+</div><hr/>La documentación de esta clase está generada del siguiente archivo:<ul>
+<li>C:/Users/Miriam/Desktop/DESARROLLO DE INTERFICIES/Informes/CD iNFORME/Centro Deportivo/ViewModel/command/<b>RelayCommand.cs</b></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CYBcz5ctGNo=",
+  "dgSpecHash": "Dp4pN+DdO6Q=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Miriam\\Desktop\\DESARROLLO DE INTERFICIES\\Informes\\CD iNFORME\\Centro Deportivo\\CentroDeportivo.Test\\CentroDeportivo.Test.csproj",
+  "projectFilePath": "C:\\Users\\Miriam\\Desktop\\DESARROLLO DE INTERFICIES\\Informes\\CD iNFORME\\Centro Deportivo\\CentroDeportivo.Test\\CentroDeportivo_Test.Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Miriam\\.nuget\\packages\\microsoft.applicationinsights\\2.22.0\\microsoft.applicationinsights.2.22.0.nupkg.sha512",
     "C:\\Users\\Miriam\\.nuget\\packages\\microsoft.codecoverage\\17.12.0\\microsoft.codecoverage.17.12.0.nupkg.sha512",

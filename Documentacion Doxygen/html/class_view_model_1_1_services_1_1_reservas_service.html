@@ -1,0 +1,261 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Centro Deportivo: Referencia de la clase ViewModel.Services.ReservasService</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Centro Deportivo<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Gestió de Centro Deportivo</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',false);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a href="namespace_view_model.html">ViewModel</a></li><li class="navelem"><a href="namespace_view_model_1_1_services.html">Services</a></li><li class="navelem"><a href="class_view_model_1_1_services_1_1_reservas_service.html">ReservasService</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="class_view_model_1_1_services_1_1_reservas_service-members.html">Lista de todos los miembros</a>  </div>
+  <div class="headertitle"><div class="title">Referencia de la clase ViewModel.Services.ReservasService</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Servicio encargado de la lógica de negocio para la gestión de reservas. Realiza validaciones de fecha, control de aforo disponible y evita duplicidades.  
+ <a href="#details">Más...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:a0eae00ee056e117cdb36c07404efc5d7" id="r_a0eae00ee056e117cdb36c07404efc5d7"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a0eae00ee056e117cdb36c07404efc5d7">ValidarReserva</a> (<a class="el" href="class_model_1_1_reserva.html">Reserva</a> reserva, <a class="el" href="class_model_1_1_actividad.html">Actividad</a> actividad)</td></tr>
+<tr class="memdesc:a0eae00ee056e117cdb36c07404efc5d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Realiza las validaciones completas para una reserva (socio, actividad y fecha).  <br /></td></tr>
+<tr class="memitem:a4dee35ffc5fd228e76e2f30499f3c466" id="r_a4dee35ffc5fd228e76e2f30499f3c466"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a4dee35ffc5fd228e76e2f30499f3c466">CrearReserva</a> (<a class="el" href="class_model_1_1_reserva.html">Reserva</a> reserva, <a class="el" href="class_model_1_1_actividad.html">Actividad</a> actividad)</td></tr>
+<tr class="memdesc:a4dee35ffc5fd228e76e2f30499f3c466"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registra una nueva reserva en el sistema tras validar sus datos.  <br /></td></tr>
+<tr class="memitem:abfd58fd80b0de34207e81b1b8b0a7e5a" id="r_abfd58fd80b0de34207e81b1b8b0a7e5a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#abfd58fd80b0de34207e81b1b8b0a7e5a">ActualizarReserva</a> (<a class="el" href="class_model_1_1_reserva.html">Reserva</a> reservaEditada)</td></tr>
+<tr class="memdesc:abfd58fd80b0de34207e81b1b8b0a7e5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actualiza la información de una reserva.  <br /></td></tr>
+<tr class="memitem:ac492d4cea59b88a822957cacb3ae4670" id="r_ac492d4cea59b88a822957cacb3ae4670"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ac492d4cea59b88a822957cacb3ae4670">EliminarReserva</a> (<a class="el" href="class_model_1_1_reserva.html">Reserva</a> reserva)</td></tr>
+<tr class="memdesc:ac492d4cea59b88a822957cacb3ae4670"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gestiona la eliminación de una reserva.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Servicio encargado de la lógica de negocio para la gestión de reservas. Realiza validaciones de fecha, control de aforo disponible y evita duplicidades. </p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones miembro</h2>
+<a id="abfd58fd80b0de34207e81b1b8b0a7e5a" name="abfd58fd80b0de34207e81b1b8b0a7e5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfd58fd80b0de34207e81b1b8b0a7e5a">&#9670;&#160;</a></span>ActualizarReserva()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ViewModel.Services.ReservasService.ActualizarReserva </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_model_1_1_reserva.html">Reserva</a></td>          <td class="paramname"><span class="paramname"><em>reservaEditada</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Actualiza la información de una reserva. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reserva</td><td><a class="el" href="class_model_1_1_reserva.html" title="Representa la reserva de una actividad deportiva realizada por un socio. Vincula a un socio específic...">Reserva</a> con los datos actualizados.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4dee35ffc5fd228e76e2f30499f3c466" name="a4dee35ffc5fd228e76e2f30499f3c466"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4dee35ffc5fd228e76e2f30499f3c466">&#9670;&#160;</a></span>CrearReserva()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ViewModel.Services.ReservasService.CrearReserva </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_model_1_1_reserva.html">Reserva</a></td>          <td class="paramname"><span class="paramname"><em>reserva</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_model_1_1_actividad.html">Actividad</a></td>          <td class="paramname"><span class="paramname"><em>actividad</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Registra una nueva reserva en el sistema tras validar sus datos. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reserva</td><td>Instancia de la nueva reserva.</td></tr>
+    <tr><td class="paramname">actividad</td><td><a class="el" href="class_model_1_1_actividad.html" title="Representa una actividad deportiva ofrecida por el centro.">Actividad</a> en la que se inscribe el socio.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac492d4cea59b88a822957cacb3ae4670" name="ac492d4cea59b88a822957cacb3ae4670"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac492d4cea59b88a822957cacb3ae4670">&#9670;&#160;</a></span>EliminarReserva()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ViewModel.Services.ReservasService.EliminarReserva </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_model_1_1_reserva.html">Reserva</a></td>          <td class="paramname"><span class="paramname"><em>reserva</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gestiona la eliminación de una reserva. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reserva</td><td><a class="el" href="class_model_1_1_reserva.html" title="Representa la reserva de una actividad deportiva realizada por un socio. Vincula a un socio específic...">Reserva</a> a eliminar.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0eae00ee056e117cdb36c07404efc5d7" name="a0eae00ee056e117cdb36c07404efc5d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0eae00ee056e117cdb36c07404efc5d7">&#9670;&#160;</a></span>ValidarReserva()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ViewModel.Services.ReservasService.ValidarReserva </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_model_1_1_reserva.html">Reserva</a></td>          <td class="paramname"><span class="paramname"><em>reserva</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_model_1_1_actividad.html">Actividad</a></td>          <td class="paramname"><span class="paramname"><em>actividad</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Realiza las validaciones completas para una reserva (socio, actividad y fecha). </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reserva</td><td>Objeto reserva a validar.</td></tr>
+    <tr><td class="paramname">actividad</td><td><a class="el" href="class_model_1_1_actividad.html" title="Representa una actividad deportiva ofrecida por el centro.">Actividad</a> asociada para validar aforo.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Excepciones</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ArgumentException</td><td>Lanzada cuando algún dato no cumple las reglas.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>La documentación de esta clase está generada del siguiente archivo:<ul>
+<li>C:/Users/Miriam/Desktop/DESARROLLO DE INTERFICIES/Informes/CD iNFORME/Centro Deportivo/ViewModel/Services/<b>ReservasService.cs</b></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

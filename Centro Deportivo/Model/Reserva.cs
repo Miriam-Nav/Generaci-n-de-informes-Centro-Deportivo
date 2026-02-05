@@ -11,15 +11,29 @@ namespace Model
 {
     using System;
     using System.Collections.Generic;
-    
+
+    /// <summary>
+    /// Representa la reserva de una actividad deportiva realizada por un socio.
+    /// Vincula a un socio específico con una actividad en una fecha determinada.
+    /// </summary>
     public partial class Reserva
     {
+        /// <summary> Identificador único de la reserva. </summary>
         public int Id { get; set; }
+
+        /// <summary> Identificador del socio que realiza la reserva. </summary>
         public int SocioId { get; set; }
+
+        /// <summary> Identificador de la actividad reservada. </summary>
         public int ActividadId { get; set; }
+
+        /// <summary> Fecha y hora programada para la actividad. </summary>
         public System.DateTime Fecha { get; set; }
-    
+
+        /// <summary> Objeto de navegación para acceder a los detalles de la Actividad. </summary>
         public virtual Actividad Actividad { get; set; }
+
+        /// <summary> Objeto de navegación para acceder a los detalles del Socio. </summary>
         public virtual Socio Socio { get; set; }
     }
 }

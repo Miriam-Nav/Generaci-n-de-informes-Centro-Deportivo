@@ -54,4 +54,3 @@ C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Dep
 C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\View\obj\Release\CentroDeportivo.application
 C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\View\obj\Release\CentroDeportivo.exe
 C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\View\obj\Release\CentroDeportivo.pdb
-C:\Users\Miriam\Desktop\DESARROLLO DE INTERFICIES\Informes\CD iNFORME\Centro Deportivo\View\obj\Release\CentroDeportivo.exe.config

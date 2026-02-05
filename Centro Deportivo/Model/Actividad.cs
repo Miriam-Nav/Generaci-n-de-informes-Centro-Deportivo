@@ -11,7 +11,10 @@ namespace Model
 {
     using System;
     using System.Collections.Generic;
-    
+
+    /// <summary>
+    /// Representa una actividad deportiva ofrecida por el centro.
+    /// </summary>
     public partial class Actividad
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,11 +22,21 @@ namespace Model
         {
             this.Reserva = new HashSet<Reserva>();
         }
-    
+
+        /// <summary> Identificador único de la actividad. </summary>
         public int Id { get; set; }
+
+        /// <summary> Nombre descriptivo de la actividad deportiva. </summary>
         public string Nombre { get; set; }
+
+        /// <summary> 
+        /// Número máximo de personas permitidas en la actividad. 
+        /// </summary>
         public int AforoMaximo { get; set; }
-    
+
+        /// <summary> 
+        /// Relación con las reservas realizadas para esta actividad concreta. 
+        /// </summary>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Reserva> Reserva { get; set; }
     }
